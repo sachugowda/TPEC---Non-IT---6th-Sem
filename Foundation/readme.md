@@ -99,3 +99,38 @@ Output:
 Explanation:
 Since the choice ‘ch’ is 2, we have to print the area of the rectangle having ‘l’ = 3 and ‘b’ = 2, which is 6.
 
+---
+
+### Nth Fibonacci Number
+
+The n-th term of Fibonacci series F(n), where F(n) is a function, is calculated using the following formula:
+
+```
+F(n) = F(n - 1) + F(n - 2)
+```
+
+Where, F(1) = 1 and F(2) = 1.
+
+Provided 'n', you have to find out the n-th Fibonacci Number. Handle edge cases like when 'n' = 1 or 'n' = 2 by using conditionals like if else and return what's expected.
+
+**Indexing starts from 1.**
+
+### Example
+
+**Input:**
+
+```
+6
+```
+
+**Output:**
+
+```
+8
+```
+
+**Explanation:**
+
+The number is ‘6’, so we have to find the 6th Fibonacci number. Using the given formula of the Fibonacci series, we get the series:    
+[1, 1, 2, 3, 5, 8, 13, 21]. So the 6th element is 8, hence we get the output.
+
