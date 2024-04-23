@@ -6,7 +6,7 @@
 -// 1, if the character is not an alphabet.
 
 // Example:
-Input: The character is 'a'.
+// Input: The character is 'a'.
 
 // Output: 0
 
