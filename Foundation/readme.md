@@ -101,7 +101,7 @@ Since the choice ‘ch’ is 2, we have to print the area of the rectangle havin
 
 ---
 
-### Nth Fibonacci Number
+**Nth Fibonacci Number**
 
 The n-th term of Fibonacci series F(n), where F(n) is a function, is calculated using the following formula:
 
@@ -113,9 +113,9 @@ Where, F(1) = 1 and F(2) = 1.
 
 Provided 'n', you have to find out the n-th Fibonacci Number. Handle edge cases like when 'n' = 1 or 'n' = 2 by using conditionals like if else and return what's expected.
 
-**Indexing starts from 1.**
+Indexing starts from 1.
 
-### Example
+**Example**
 
 **Input:**
 
