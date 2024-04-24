@@ -135,3 +135,8 @@ Indexing starts from 1.
 The number is ‘6’, so we have to find the 6th Fibonacci number. Using the given formula of the Fibonacci series, we get the series:    
 [1, 1, 2, 3, 5, 8, 13, 21]. So the 6th element is 8, hence we get the output.
 
+<hr>
+
+**Assignment Link**
+
+https://classroom.github.com/a/kTYQ9m2B
