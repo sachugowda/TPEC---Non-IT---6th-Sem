@@ -1,5 +1,7 @@
 ## Problem Statement (Connect `n` ropes with minimal cost)
 
+Link https://www.techiedelight.com/connect-n-ropes-with-minimal-cost/
+
 Given `n` ropes of different lengths, connect them into a single rope with the minimum cost. Assume that the cost to connect two ropes is the same as the sum of their lengths.
 
 For example,
