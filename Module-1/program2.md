@@ -1,4 +1,6 @@
-## Problem Statement (Replace each array element by its corresponding rank) https://www.techiedelight.com/replace-each-element-corresponding-rank-array/
+## Problem Statement (Replace each array element by its corresponding rank) 
+
+link:https://www.techiedelight.com/replace-each-element-corresponding-rank-array/
 
 Given an array of distinct integers, replace each array element by its corresponding rank in the array.
 
