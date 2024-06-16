@@ -1,4 +1,4 @@
-# Dynamic Programming Tutorial
+# Dynamic Programming
 
 ## What is Dynamic Programming?
 
