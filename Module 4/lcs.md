@@ -1,4 +1,4 @@
-# Dynamic Programming Tutorial: Longest Common Subsequence (LCS)
+# Dynamic Programming: Longest Common Subsequence (LCS)
 
 ## What is Dynamic Programming?
 
@@ -13,7 +13,7 @@ Dynamic Programming (DP) is a method for solving complex problems by breaking th
 
 ## Example: Longest Common Subsequence (LCS)
 
-The Longest Common Subsequence (LCS) problem is a classic example where dynamic programming can be applied. The LCS problem is to find the longest subsequence common to all sequences in a set of sequences. A subsequence is a sequence that appears in the same relative order but not necessarily consecutively.
+The Longest Common Subsequence (LCS) problem is a classic example of how dynamic programming can be applied. The LCS problem is to find the longest subsequence common to all sequences in a set of sequences. A subsequence is a sequence that appears in the same relative order but not necessarily consecutively.
 
 ### Problem Statement
 
@@ -21,8 +21,13 @@ Given two sequences, find the length of the longest subsequence present in both 
 
 ### Recurrence Relation
 
-\[ \text{LCS}(i, j) = \text{LCS}(i-1, j-1) + 1 \text{ if } X[i-1] == Y[j-1] \]  
-\[ \text{LCS}(i, j) = \max(\text{LCS}(i-1, j), \text{LCS}(i, j-1)) \text{ if } X[i-1] \neq Y[j-1] \]
+$$
+\text{LCS}(i, j) = \text{LCS}(i-1, j-1) + 1 \text{ if } X[i-1] == Y[j-1]
+$$
+
+$$
+\text{LCS}(i, j) = \max(\text{LCS}(i-1, j), \text{LCS}(i, j-1)) \text{ if } X[i-1] \neq Y[j-1]
+$$
 
 ### 1. LCS using Recursion
 
@@ -201,5 +206,3 @@ Dynamic programming is a powerful technique for solving problems with overlappin
 - [LeetCode - Dynamic Programming Problems](https://leetcode.com/tag/dynamic-programming/)
 
 ---
-
-This tutorial provides a comprehensive introduction to dynamic programming with practical examples and problems commonly asked in coding interviews, including detailed explanations and diagrams.
