@@ -123,7 +123,7 @@ int main() {
 - **Memoization**: Optimized recursion by storing intermediate results, avoiding redundant calculations.
 - **Dynamic Programming (Tabulation)**: Builds the solution iteratively from the bottom up, avoiding recursion and further reducing overhead.
 
-## Conclusion
+## Summary
 
 Dynamic programming is a powerful technique for solving problems with overlapping subproblems and optimal substructure. By storing the results of subproblems, we can avoid redundant calculations and achieve significant performance improvements. The Fibonacci sequence example illustrates how dynamic programming can be applied in practice, providing a foundation for tackling more complex problems.
 
