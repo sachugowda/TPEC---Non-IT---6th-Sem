@@ -134,6 +134,8 @@ Dynamic programming is a powerful technique for solving problems with overlappin
 - [HackerRank - Dynamic Programming](https://www.hackerrank.com/domains/tutorials/10-days-of-dp)
 - [LeetCode - Dynamic Programming Problems](https://leetcode.com/tag/dynamic-programming/)
 
+## Related Video
 
+[![Watch the video](https://img.youtube.com/vi/5dRGRueKU3M/0.jpg)](https://youtu.be/5dRGRueKU3M?si=KAWUflTLinebGHzf)
 
 ---
