@@ -27,6 +27,7 @@ To further explore Dynamic Programming, check out the following resources:
 
 ## Assignment 
 
+https://www.geeksforgeeks.org/program-nth-catalan-number/ <br>
 Updated soon
 
 ## Contributing
