@@ -37,31 +37,25 @@ Recursion is the simplest way to solve the LCS problem, but it has a high comput
 #include <stdio.h>
 #include <string.h>
 
-// Function to calculate LCS using recursion
-int lcs(char* X, char* Y, int m, int n) {
-    if (m == 0 || n == 0) {
-        return 0; // Base case: If either string is empty, LCS is 0
-    }
-    if (X[m - 1] == Y[n - 1]) {
-        return 1 + lcs(X, Y, m - 1, n - 1); // Characters match, move both indices
-    } else {
-        return max(lcs(X, Y, m, n - 1), lcs(X, Y, m - 1, n)); // Characters don't match, move one index at a time
-    }
-}
-
-// Helper function to find the maximum of two numbers
-int max(int a, int b) {
-    return (a > b) ? a : b;
+int LCS_Recursion(char *X, char *Y, int m, int n) {
+    if (m == 0 || n == 0)
+        return 0;
+    if (X[m-1] == Y[n-1])
+        return 1 + LCS_Recursion(X, Y, m-1, n-1);
+    else
+        return (LCS_Recursion(X, Y, m, n-1) > LCS_Recursion(X, Y, m-1, n)) ? 
+                LCS_Recursion(X, Y, m, n-1) : LCS_Recursion(X, Y, m-1, n);
 }
 
 int main() {
-    char X[] = "AGGTAB";
-    char Y[] = "GXTXAYB";
+    char X[] = "ad";
+    char Y[] = "abcd";
     int m = strlen(X);
     int n = strlen(Y);
-    printf("Length of LCS is %d\n", lcs(X, Y, m, n));
+    printf("Length of LCS (Recursion) is %d\n", LCS_Recursion(X, Y, m, n));
     return 0;
 }
+
 ```
 
 **Explanation**:
