@@ -70,43 +70,32 @@ Memoization is an optimization technique where we store the results of expensive
 #include <stdio.h>
 #include <string.h>
 
-#define MAX 1000
-
-// Function to calculate LCS using memoization
-int lcs(char* X, char* Y, int m, int n, int memo[MAX][MAX]) {
-    if (m == 0 || n == 0) {
-        return 0; // Base case: If either string is empty, LCS is 0
-    }
-    if (memo[m][n] != -1) {
-        return memo[m][n]; // Return the stored result if it exists
-    }
-    if (X[m - 1] == Y[n - 1]) {
-        memo[m][n] = 1 + lcs(X, Y, m - 1, n - 1, memo); // Characters match, move both indices
-    } else {
-        memo[m][n] = max(lcs(X, Y, m, n - 1, memo), lcs(X, Y, m - 1, n, memo)); // Characters don't match, move one index at a time
-    }
+int LCS_Memoization(char *X, char *Y, int m, int n, int memo[][n+1]) {
+    if (m == 0 || n == 0)
+        return 0;
+    if (memo[m][n] != -1)
+        return memo[m][n];
+    if (X[m-1] == Y[n-1])
+        memo[m][n] = 1 + LCS_Memoization(X, Y, m-1, n-1, memo);
+    else
+        memo[m][n] = (LCS_Memoization(X, Y, m, n-1, memo) > LCS_Memoization(X, Y, m-1, n, memo)) ? 
+                      LCS_Memoization(X, Y, m, n-1, memo) : LCS_Memoization(X, Y, m-1, n, memo);
     return memo[m][n];
 }
 
-// Helper function to find the maximum of two numbers
-int max(int a, int b) {
-    return (a > b) ? a : b;
-}
-
 int main() {
-    char X[] = "AGGTAB";
-    char Y[] = "GXTXAYB";
+    char X[] = "ad";
+    char Y[] = "abcd";
     int m = strlen(X);
     int n = strlen(Y);
-    int memo[MAX][MAX];
-    for (int i = 0; i < MAX; i++) {
-        for (int j = 0; j < MAX; j++) {
-            memo[i][j] = -1; // Initialize memo array with -1
-        }
-    }
-    printf("Length of LCS is %d\n", lcs(X, Y, m, n, memo));
+    int memo[m+1][n+1];
+    for (int i = 0; i <= m; i++)
+        for (int j = 0; j <= n; j++)
+            memo[i][j] = -1;
+    printf("Length of LCS (Memoization) is %d\n", LCS_Memoization(X, Y, m, n, memo));
     return 0;
 }
+
 ```
 
 **Explanation**:
@@ -122,37 +111,33 @@ In dynamic programming, we solve the problem in a bottom-up manner, starting fro
 #include <string.h>
 
 // Function to calculate LCS using dynamic programming (tabulation)
-int lcs(char* X, char* Y, int m, int n) {
-    int dp[m + 1][n + 1];
+#include <stdio.h>
+#include <string.h>
 
+int LCS_Tabulation(char *X, char *Y, int m, int n) {
+    int L[m+1][n+1];
     for (int i = 0; i <= m; i++) {
         for (int j = 0; j <= n; j++) {
-            if (i == 0 || j == 0) {
-                dp[i][j] = 0; // Base case: If either string is empty, LCS is 0
-            } else if (X[i - 1] == Y[j - 1]) {
-                dp[i][j] = dp[i - 1][j - 1] + 1; // Characters match, add 1 to the result
-            } else {
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]); // Characters don't match, take the maximum
-            }
+            if (i == 0 || j == 0)
+                L[i][j] = 0;
+            else if (X[i-1] == Y[j-1])
+                L[i][j] = L[i-1][j-1] + 1;
+            else
+                L[i][j] = (L[i-1][j] > L[i][j-1]) ? L[i-1][j] : L[i][j-1];
         }
     }
-
-    return dp[m][n];
-}
-
-// Helper function to find the maximum of two numbers
-int max(int a, int b) {
-    return (a > b) ? a : b;
+    return L[m][n];
 }
 
 int main() {
-    char X[] = "AGGTAB";
-    char Y[] = "GXTXAYB";
+    char X[] = "ad";
+    char Y[] = "abcd";
     int m = strlen(X);
     int n = strlen(Y);
-    printf("Length of LCS is %d\n", lcs(X, Y, m, n));
+    printf("Length of LCS (Tabulation) is %d\n", LCS_Tabulation(X, Y, m, n));
     return 0;
 }
+
 ```
 
 **Explanation**:
