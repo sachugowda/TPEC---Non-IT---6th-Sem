@@ -1,4 +1,4 @@
-# Introduction to Hashmaps in C
+# Hashmaps
 
 ## What is a Hashmap?
 
