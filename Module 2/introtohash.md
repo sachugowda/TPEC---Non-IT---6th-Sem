@@ -20,23 +20,27 @@ Here's a simple implementation of a hashmap in C using separate chaining for col
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 #define TABLE_SIZE 10
 
+// Define a structure for a Node in the linked list
 typedef struct Node {
     char* key;
     int value;
     struct Node* next;
 } Node;
 
+// Function to create a new node
 Node* createNode(char* key, int value) {
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->key = strdup(key);
+    newNode->key = strdup(key);  // Duplicate the key string
     newNode->value = value;
     newNode->next = NULL;
     return newNode;
 }
 
+// Hash function to calculate the index for a given key
 unsigned int hashFunction(char* key) {
     unsigned long int hashValue = 0;
     int i = 0;
@@ -48,6 +52,7 @@ unsigned int hashFunction(char* key) {
     return hashValue % TABLE_SIZE;
 }
 
+// Function to insert a key-value pair into the hash table
 void insert(Node* table[], char* key, int value) {
     unsigned int index = hashFunction(key);
     Node* newNode = createNode(key, value);
@@ -62,6 +67,7 @@ void insert(Node* table[], char* key, int value) {
     }
 }
 
+// Function to search for a key in the hash table
 int search(Node* table[], char* key) {
     unsigned int index = hashFunction(key);
     Node* temp = table[index];
@@ -74,6 +80,7 @@ int search(Node* table[], char* key) {
     return -1;  // Key not found
 }
 
+// Function to delete a key-value pair from the hash table
 void delete(Node* table[], char* key) {
     unsigned int index = hashFunction(key);
     Node* temp = table[index];
@@ -95,6 +102,7 @@ void delete(Node* table[], char* key) {
     free(temp);
 }
 
+// Function to print the hash table
 void printTable(Node* table[]) {
     for (int i = 0; i < TABLE_SIZE; i++) {
         Node* temp = table[i];
@@ -108,24 +116,30 @@ void printTable(Node* table[]) {
 }
 
 int main() {
+    // Initialize hash table with NULL values
     Node* hashTable[TABLE_SIZE] = {NULL};
 
+    // Insert key-value pairs into the hash table
     insert(hashTable, "apple", 1);
     insert(hashTable, "banana", 2);
     insert(hashTable, "orange", 3);
     insert(hashTable, "grape", 4);
     insert(hashTable, "cherry", 5);
 
+    // Print the hash table
     printTable(hashTable);
 
+    // Search for keys in the hash table
     printf("Search for 'apple': %d\n", search(hashTable, "apple"));
     printf("Search for 'banana': %d\n", search(hashTable, "banana"));
 
+    // Delete a key from the hash table
     delete(hashTable, "banana");
     printTable(hashTable);
 
     return 0;
 }
+
 ```
 
 ## Relevant YouTube Videos
